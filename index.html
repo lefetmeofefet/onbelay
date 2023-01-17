@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>On Belay</title>
+
+    <!--    <meta name="viewport"-->
+    <!--          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">-->
+    <!--    <meta name="mobile-web-app-capable" content="yes">-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="On Belay app for finding climbing partners">
+    <meta name="keywords" content="Climbing, Rock climbing, Klettern, Climb">
+    <meta name="author" content="David Gdalevich">
+
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./frontend/res/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./frontend/res/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./frontend/res/favicon-16x16.png">
+    <link rel="icon" href="./favicon.ico?v=4" />
+
+    <!--    <link rel="manifest" href="/site.webmanifest">-->
+
+    <!--Font Roboto Mono-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <!--Styles-->
+    <link href="./frontend/style/scrollbar-style.css" rel="stylesheet">
+    <link href="./frontend/style/theme.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            height: 100%;
+            margin: 0;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        html {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body theme="light">
+
+<!--Icons-->
+<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      media="all">
+
+<!--Swipe events lib-->
+<script src="./frontend/libs/swiped-events/swiped-events.min.js" type="module"></script>
+
+<!--Moment JS-->
+<script src="./frontend/libs/moment/moment.min.js"></script>
+
+<!--Markdown-->
+<script src="./frontend/libs/showdown/showdown.min.js"></script>
+<script src="./frontend/libs/highlight/highlight.min.js"></script>
+<script src="./frontend/libs/showdown-highlight/he.js"></script>
+<script src="./frontend/libs/showdown-highlight/showdown-highlight.min.js"></script>
+
+<!--App-->
+<script src="./frontend/onbelay-app.js" type="module"></script>
+
+<onbelay-app></onbelay-app>
+</body>
+</html>
