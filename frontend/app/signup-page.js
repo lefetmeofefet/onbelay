@@ -26,7 +26,7 @@ createYoffeeElement("signup-page", (props, self) => {
             /*opacity: 0.7;*/
             /*margin-bottom: 75px;*/
             
-            font-size: 26px;
+            /*font-size: 26px;*/
             opacity: 0.6;
             margin-bottom: 75px;
             font-weight: bold;
