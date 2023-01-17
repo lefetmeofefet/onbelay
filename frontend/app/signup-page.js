@@ -11,25 +11,35 @@ createYoffeeElement("signup-page", (props, self) => {
             display: flex;
             justify-content: center;
             flex-direction: column;
-            padding: 50px 70px;
             height: -webkit-fill-available;
         }
         
+        #title-container {
+            display: flex;
+            background-color: var(--secondary-color);
+            height: 300px;
+            width: -webkit-fill-available;
+            flex-direction: column;
+            padding: 50px 10% 20px 10%;
+        }
+        
         #title {
-            font-size: 50px;
+            font-size: 30px;
             margin-bottom: 20px;
             color: #eeeeee;
+            font-weight: bold;
         }
 
         #subtitle {
-            /*font-size: 26px;*/
-            /*opacity: 0.7;*/
-            /*margin-bottom: 75px;*/
-            
-            /*font-size: 26px;*/
             opacity: 0.6;
-            margin-bottom: 75px;
             font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        #signup-container {
+            display: flex;
+            padding: 10%;
+            flex-direction: column;
         }
         
         #name-container {
@@ -37,7 +47,7 @@ createYoffeeElement("signup-page", (props, self) => {
         }
         
         #name-container > #name-text-description {
-            font-size: 28px;
+            font-size: 22px;
             margin-bottom: 20px;
         }
         
@@ -69,39 +79,34 @@ createYoffeeElement("signup-page", (props, self) => {
             height: 40px;
         }
         
-        #background-stylish {
-            background-color: var(--secondary-color);
-            height: 300px;
-            width: -webkit-fill-available;
-            position: fixed;
-            left: 0;
-            top: 0;
-            z-index: -1;
-        }
     </style>
-    <div id="background-stylish"></div>
-    <div id="title">
-        Welcome to OnBelay!
+    <div id="title-container">
+        <div id="title">
+            Welcome to OnBelay!
+        </div>
+        <div id="subtitle">
+            Here you will find climbing partners, and they will find you (-;
+        </div>
     </div>
-    <div id="subtitle">
-        Here you will find climbing partners, and they will find you (-;
+    
+    <div id="signup-container">
+        <div id="name-container">
+            <div id="name-text-description">Your Nickname:</div>
+            <text-input id="name-text-input"
+                        placeholder=${["Chris Sharma", "Adam Ondra", "Margo Hayes", "Reinhold Messner", "Ueli Steck"][Math.floor(Math.random() * 5)]}>
+            </text-input>
+        </div>
+        <div id="tags-container">
+            ${() => State.tags
+            .map(tag => html()`
+            <x-tag
+                   onclick=${() => tag.selected = !tag.selected}>
+                ${() => tag.name}
+            </x-tag>
+            `)}
+        </div>
+        <x-button id="finish-button" onclick=${() => finish()}>Finish</x-button>
     </div>
-    <div id="name-container">
-        <div id="name-text-description">Your Nickname:</div>
-        <text-input id="name-text-input"
-                    placeholder=${["Chris Sharma", "Adam Ondra", "Margo Hayes", "Reinhold Messner", "Ueli Steck"][Math.floor(Math.random() * 5)]}>
-        </text-input>
-    </div>
-    <div id="tags-container">
-        ${() => State.tags
-        .map(tag => html()`
-        <x-tag
-               onclick=${() => tag.selected = !tag.selected}>
-            ${() => tag.name}
-        </x-tag>
-        `)}
-    </div>
-    <x-button id="finish-button" onclick=${() => finish()}>Finish</x-button>
     `
 
     function finish() {
